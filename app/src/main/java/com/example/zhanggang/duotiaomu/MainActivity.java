@@ -26,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         init();
 
-        adapter = new MyAdapter(list,this);
+        adapter = new MyAdapter(list, this);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,12);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 12);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
                 //得到类型
                 int type = adapter.getItemViewType(position);
-                switch (type){
+                switch (type) {
                     case 0:
                         return 12;  //下标0的数据占12单位
                     case 1:
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        new Thread(){
+        new Thread() {
             @Override
             public void run() {
                 super.run();
